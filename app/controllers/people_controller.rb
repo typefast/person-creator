@@ -10,8 +10,10 @@ class PeopleController < ApplicationController
   def create
     @person = Person.create(person_params)
     if @person.save
+      flash[:success] = "You created a new person!"
       redirect_to @person
     else
+      flash[:error] = "There was an error when creating the new person."
       render :new
     end
   end

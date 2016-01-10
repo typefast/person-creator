@@ -1,3 +1,13 @@
+<% if @person.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @person.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h2>New Person</h2>
 
 <%= form_for @person, url: {action: "create"} do |p| %>
