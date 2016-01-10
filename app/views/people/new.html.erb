@@ -1,23 +1,36 @@
-<% if @person.errors.any? %>
-  <div id="error_explanation">
-    <ul>
-    <% @person.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      
+      <% if @person.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+          <% @person.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <h2>New Person</h2>
+
+      <%= form_for @person, url: {action: "create"} do |p| %>
+        
+        <div class="form-group">
+        <%= p.label :first_name %>
+        <%= p.text_field :first_name, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+        <%= p.label :last_name %>
+        <%= p.text_field :last_name, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+        <%= p.submit "Create Person", class: 'btn btn-success' %>
+        </div>
+        
+      <% end %>
+    </div>
   </div>
-<% end %>
-
-<h2>New Person</h2>
-
-<%= form_for @person, url: {action: "create"} do |p| %>
-
-  <%= p.label :first_name %>
-  <%= p.text_field :first_name %>
-
-  <%= p.label :last_name %>
-  <%= p.text_field :last_name %>
-  
-  <%= p.submit "Create Person" %>
-  
-<% end %>
+</div>

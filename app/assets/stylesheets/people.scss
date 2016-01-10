@@ -1,3 +1,21 @@
 // Place all the styles related to the People controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.success {
+  background: #191;
+  color: white;
+  padding: .5em;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 1em 0;
+}
+
+.error {
+  background: #911;
+  color: white;
+  padding: .5em;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 1em 0;
+}
