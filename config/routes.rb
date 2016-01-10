@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/all', :to => 'people#all', :as => :all_people
   resources :people
   root 'people#index'
 
