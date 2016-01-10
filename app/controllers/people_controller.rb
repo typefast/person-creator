@@ -10,10 +10,14 @@ class PeopleController < ApplicationController
   def create
     @person = Person.create(person_params)
     if @person.save
-      render :index
+      redirect_to @person
     else
       render :new
     end
+  end
+  
+  def show
+    @person = Person.find(params[:id])
   end
   
   private
